@@ -1,5 +1,5 @@
 import {RefObject, useState} from 'react';
-import {AccessibilityInfo, findNodeHandle} from 'react-native/types';
+import {AccessibilityInfo, findNodeHandle} from 'react-native';
 import {useScreenReaderStatus} from './ui/ScreenReaderProvider';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

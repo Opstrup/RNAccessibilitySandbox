@@ -6,6 +6,7 @@ import {ScreenReaderProvider} from './ui/ScreenReaderProvider';
 import AccessibleImagesScene from './ui/scenes/AccessibleImagesScene';
 import AlternativeUIScene from './ui/scenes/AlternativeUIScene';
 import BasicAccessibilityPropsScene from './ui/scenes/BasicAccessibilityPropsScene';
+import FocusControlScene from './ui/scenes/FocusControlScene';
 import SwitchesScene from './ui/scenes/SwitchesScene';
 import SceneBackground from './ui/views/SceneBackground';
 
@@ -17,6 +18,7 @@ enum Scene {
   AccessibleImages = 'AccessibleImages',
   Switches = 'Switches',
   AlternativeUI = 'AlternativeUI',
+  FocusControl = 'FocusControl',
 }
 
 const App: FunctionComponent = () => (
@@ -48,6 +50,11 @@ const App: FunctionComponent = () => (
           component={AlternativeUIScene}
           options={{title: Scene.AlternativeUI}}
         />
+        <Stack.Screen
+          name={Scene.FocusControl}
+          component={FocusControlScene}
+          options={{title: Scene.FocusControl}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   </ScreenReaderProvider>
@@ -67,6 +74,10 @@ const Home: FunctionComponent = () => (
     <ListNavigationRowItem
       title="Alternative UI"
       navToScene={Scene.AlternativeUI}
+    />
+    <ListNavigationRowItem
+      title="Focus control"
+      navToScene={Scene.FocusControl}
     />
   </SceneBackground>
 );
